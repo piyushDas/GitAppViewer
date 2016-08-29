@@ -1,121 +1,117 @@
 <!DOCTYPE html>
 <html ng-app="githubViewer" lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.js"></script>
-		<script src="script.js" type="text/javascript" charset="utf-8" async defer></script>
-		<script src="dirPagination.js" type="text/javascript" charset="utf-8" async defer></script>
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-		<title>GitHub Lookup</title>
 
-		<!-- Bootstrap CSS -->
-		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-		
-		<style>
-		footer{
-		padding-top: 150px;
-		}
-		</style>
-		<link rel="shortcut icon" href="a1.png">
-	</head>
-	<body data-spy="scroll" data-target="#my-navbar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular.js"></script>
+    <script src="./js/script.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script src="./js/dirPagination.js" type="text/javascript" charset="utf-8" async defer></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <title>GitHub Lookup</title>
+    <!-- Bootstrap CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    footer {
+        padding-top: 150px;
+    }
+    </style>
+    <link rel="shortcut icon" href="./res/image/a1.png">
+</head>
 
-	<!--navbar-->
-<nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</button> 
-
-		<a href="app.html" target="#" class="navbar-brand">Project By S.Prakash</a>	
-		</div><!--navbar header-->
-		<div class="collapse navbar-collapse" id="navbar-collapse">
-		<a href="https://github.com" class="btn btn-info navbar-btn navbar-right">GitHub.com</a>
-
-		<ul class="nav navbar-nav">
-			<li><a href=""></a>		
-		</ul>			
-		</div>		
-	</div><!--end container-->
-</nav><!--end navbar-->
-
-<div class="jumbotron">
-	<div class="container text-center ">
-		<h1>Git_Search</h1>
-	
-	</div><!--end container-->
-</div> <!--end jumbotron-->
-		<div ng-controller="UserController">
-
-<!--search form starts-->
-<div class='container text-center'>
-	<!--call to action-->
-<section>
-		<div class="container text-center">
-			<form action="" class="form-inline" ng-submit="fun()">
-				<div class="form-group">
-				<!-- <label for="subscription">Subscribe</label> -->
-				<input type="text" class="form-control" id="subscription" placeholder="Enter a keyword.." ng-model="fname">
-				</div>
-				<button type="button" class="btn btn-info" ng-click="fun()">Search</button>
-			</form>
-		</div><!--end container-->
-		
-		
-		
-</section><!--Ends call to action-->
-</div><!--end container-->
-
-
-		<div class="container">
-		  <form class="form-inline">
-        		<!-- <div class="form-group"> -->
-            	<label >Search</label>
-            	<input type="text" ng-model="search" class="form-control" placeholder="Search">
-        		<!-- </div> -->
-    	</form>          
-		  <table class="table table-striped">
-		    <thead>
-		      <tr>
-		        <th >Avatar</th>
-		        <th ng-click="sort('owner.login')">User</th>
-		        <th>Description</th>
-		        <th ng-click="sort('updated_at')">Last Update</th>
-		        <th ng-click="sort('stargazers_count')">Stars</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-          <tr dir-paginate="x in person.items|orderBy:sortKey:reverse|filter:search|itemsPerPage:10">
-		        <td><img src="{{x.owner.avatar_url}}" height="30" width="30"/></td>
-		        <td><a href="{{x.html_url}}">{{ x.owner.login }}</a></td>
-		        <td>{{x.description}}</td>
-		        <td>{{x.updated_at}}</td>
-		        <td>{{x.stargazers_count}}</td>
-
-		      </tr>
-		    </tbody>
-		  </table>
-		  <div align="center">
-		  <dir-pagination-controls
-        	max-size="3"
-        	direction-links="true"
-        	boundary-links="true" >
-    	   </dir-pagination-controls>
-    	</div>
-		</div>
-	</div>
-
-	<!--footer-->
-	<footer>
-	<hr>
-			<div class="container text-center">
-			<ul class="list-inline">
-				<li><a href="#">Youtube</li>
+<body data-spy="scroll" data-target="#my-navbar">
+    <!--navbar-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="github.com" target="blank" class="navbar-brand">Go to Github!</a>
+            </div>
+            <!--navbar header-->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <a href="#" class="btn btn-info navbar-btn navbar-right">Get App</a>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href=""></a>
+                </ul>
+            </div>
+        </div>
+        <!--end container-->
+    </nav>
+    <!--end navbar-->
+    <div class="jumbotron">
+        <div class="container text-center ">
+            <h1>
+		Lookup<br>
+			<h2><small>Search for users, repos, projects, anything on github..</small><h2>
+		</h1>
+        </div>
+        <!--end container-->
+    </div>
+    <!--end jumbotron-->
+    <div ng-controller="UserController">
+        <!--search form starts-->
+        <div class='container text-center'>
+            <!--call to action-->
+            <section>
+                <div class="container text-center">
+                    <form action="" class="form-inline" ng-submit="fun()">
+                        <div class="form-group">
+                            <!-- <label for="subscription">Subscribe</label> -->
+                            <input type="text" class="form-control" id="subscription" placeholder="Enter a keyword.." ng-model="fname">
+                        </div>
+                        <button type="button" class="btn btn-info" ng-click="fun()">Search</button>
+                    </form>
+                </div>
+                <!--end container-->
+            </section>
+            <!--Ends call to action-->
+        </div>
+        <!--end container-->
+        <div class="container">
+            <form class="form-inline">
+                <!-- <div class="form-group"> -->
+                <label>Filter</label>
+                <input type="text" ng-model="search" class="form-control" placeholder="filter you results by typing..">
+                <!-- </div> -->
+            </form>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Avatar</th>
+                            <th ng-click="sort('owner.login')">User</th>
+                            <th>Description</th>
+                            <th ng-click="sort('updated_at')">Last Update</th>
+                            <th ng-click="sort('stargazers_count')">Stars</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr dir-paginate="x in person.items|orderBy:sortKey:reverse|filter:search|itemsPerPage:10">
+                            <td><img src="{{x.owner.avatar_url}}" height="30" width="30" /></td>
+                            <td><a href="{{x.html_url}}">{{ x.owner.login }}</a></td>
+                            <td>{{x.description}}</td>
+                            <td>{{x.updated_at}}</td>
+                            <td>{{x.stargazers_count}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <div align="center">
+                <dir-pagination-controls max-size="3" direction-links="true" boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer>
+        <hr>
+        <div class="container text-center">
+            <ul class="list-inline">
+                <li><a href="#">Youtube</li>
 				<li><a href="#">Github</li>
 				<li><a href="#">Facebook</li>	
 			</ul>
